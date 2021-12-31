@@ -94,7 +94,7 @@ print(namelist.extend(['fan', 'mei']))
 print(namelist.insert(4, 'chen'))
 print(namelist)
 
-# 删除数据
+# 删除数据   del  pop   remove   clear
 name_list = ['Tom', 'lily', 'rose']
 # del namelist
 # print(namelist)
@@ -107,3 +107,23 @@ name_list = ['Tom', 'lily', 'rose']
 
 name_list.clear()
 print(name_list)
+
+# 修改数据
+my_list = ['Tom', 'lily', 'rose']
+my_list[0] = 'aaa'
+print(my_list)
+
+# 逆序
+list = [1, 3, 5, 2, 9, 4]
+# list.reverse()
+# print(list)
+# 升序，降序
+list.sort(reverse=False)  # 默认为降序
+list.sort(reverse=True)
+print(list)
+
+# 列表复制
+name_list = ['Tom', 'lily', 'rose']
+# name_list2 = name_list.copy()
+name_list2 = name_list[:]
+print(name_list2)
