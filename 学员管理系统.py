@@ -86,6 +86,28 @@ def modify_info():
     print(info)
 
 
+# 搜索学员信息
+def search_info():
+    search_name = input('请输入姓名： ')
+    global info
+    for i in info:
+        if search_name == i['name']:
+            print('查找的学员信息如下：-----------------')
+            print(f'该学员的学号是{i["id"]},姓名是{i["name"]}，手机号是{i["phone"]}')
+            break
+    else:
+        print(f"{search_name}学员不在该系统中")
+
+
+# 显示所有：
+def print_all():
+    """显示所有学员信息"""
+    print("学号\t姓名\t手机号")
+    # 打印所有学员的数据
+    for i in info:
+        print(f"{i['id']}\t {i['name']}\t {i['phone']}")
+
+
 while True:
     # 1.显示功能界面
     info_print()
@@ -103,11 +125,15 @@ while True:
         # print('修改')
         modify_info()
     elif user_num == 4:
-        print('查询')
-
+        # print('查询')
+        search_info()
     elif user_num == 5:
-        print('显示所有')
+        # print('显示所有')
+        print_all()
     elif user_num == 6:
-        print('退出系统')
+        # print('退出系统')
+        exit_flag = input('确定要退出吗？ yes or no   ')
+        if exit_flag == "yes":
+            break
     else:
         print('输入的功能序号有误，请重新输入： ')
