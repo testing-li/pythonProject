@@ -20,6 +20,20 @@ class School(object):
 class Prentice(School, Master):
     def __init__(self):
         self.kongfu = '[独创的煎饼果子配方]'
+        # 定义私有属性
+        self.__money = 2000000
+
+    # 获取私有属性
+    def get_money(self):
+        return self.__money
+
+    # 修改私有属性
+    def set_money(self):
+        self.__money = 500
+
+    # 定义私有方法
+    def __info_print(self):
+        print('这是私有方法')
 
     def make_cake(self):
         self.__init__()
@@ -40,13 +54,18 @@ class Tusun(Prentice):
 
 
 # 使用徒弟创建对象，调用实例属性方法
-daqiu = Prentice()
-# print(daqiu.kongfu)
-daqiu.make_cake()
-daqiu.make_master_cake()
-daqiu.make_school_cake()
+# daqiu = Prentice()
+# # print(daqiu.kongfu)
+# daqiu.make_cake()
+# daqiu.make_master_cake()
+# daqiu.make_school_cake()
 
 zhangsan = Tusun()
-zhangsan.make_cake()
-zhangsan.make_master_cake()
-zhangsan.make_school_cake()
+# zhangsan.make_cake()
+# zhangsan.make_master_cake()
+# zhangsan.make_school_cake()
+# print(zhangsan.__money)
+# zhangsan.__info_print()
+print(zhangsan.get_money())
+zhangsan.set_money()
+print(zhangsan.get_money())
